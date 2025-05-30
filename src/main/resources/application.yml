@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    username: root
+    password: Krishmari2007
+    url: jdbc:mysql://localhost:3306/eblog
+
