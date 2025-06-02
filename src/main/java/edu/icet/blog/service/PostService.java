@@ -19,6 +19,13 @@ public class PostService {
         PostEntity postEntity=new PostEntity();
         postEntity.setTitle(postDTO.getTitle());
         postEntity.setContent(postDTO.getContent());
+        postEntity.setTags(postDTO.getTags());
+        postEntity.setCategory(postDTO.getCategory());
+        postEntity.setComments_count(postDTO.getComments_count());
+        postEntity.setCreated_at(postDTO.getCreated_at());
+        postEntity.setUpdated_at(postDTO.getUpdated_at());
+        postEntity.setImage_url(postDTO.getImage_url());
+
         postRepository.save(postEntity);
     }
 
@@ -30,6 +37,12 @@ public class PostService {
             postDTO.setId(postEntity.getId());
             postDTO.setTitle(postEntity.getTitle());
             postDTO.setContent(postEntity.getContent());
+            postDTO.setTags(postEntity.getTags());
+            postDTO.setCategory(postEntity.getCategory());
+            postDTO.setComments_count(postEntity.getComments_count());
+            postDTO.setCreated_at(postEntity.getCreated_at());
+            postDTO.setUpdated_at(postEntity.getUpdated_at());
+            postDTO.setImage_url(postEntity.getImage_url());
 
             postDTOS.add(postDTO);
         }
@@ -41,21 +54,33 @@ public class PostService {
         postEntity.setId(postDTO.getId());
         postEntity.setTitle(postDTO.getTitle());
         postEntity.setContent(postDTO.getContent());
+        postEntity.setTags(postDTO.getTags());
+        postEntity.setCategory(postDTO.getCategory());
+        postEntity.setComments_count(postDTO.getComments_count());
+        postEntity.setCreated_at(postDTO.getCreated_at());
+        postEntity.setUpdated_at(postDTO.getUpdated_at());
+        postEntity.setImage_url(postDTO.getImage_url());
 
         postRepository.save(postEntity);
     }
 
-    public void delete(int id){
+    public void delete(Long id){
         postRepository.deleteById(id);
     }
 
-    public PostDTO getById(Integer id){
+    public PostDTO getById(Long id){
         Optional<PostEntity> postEntity= postRepository.findById(id);
         PostDTO postDTO=new PostDTO();
         if(postEntity!=null){
             postDTO.setId(postEntity.get().getId());
             postDTO.setTitle(postEntity.get().getTitle());
             postDTO.setContent(postEntity.get().getContent());
+            postDTO.setTags(postEntity.get().getTags());
+            postDTO.setCategory(postEntity.get().getCategory());
+            postDTO.setComments_count(postEntity.get().getComments_count());
+            postDTO.setCreated_at(postEntity.get().getCreated_at());
+            postDTO.setUpdated_at(postEntity.get().getUpdated_at());
+            postDTO.setImage_url(postEntity.get().getImage_url());
 
             return postDTO;
         }else {

@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 public class PostController {
+
     @Autowired
     PostService postService;
 
@@ -21,16 +23,19 @@ public class PostController {
     public List<PostDTO> getAll(){
         return postService.getAll();
     }
+
     @PutMapping("/update")
     public void update(@RequestBody PostDTO postDTO){
         postService.update(postDTO);
     }
+
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable int id){
+    public void delete(@PathVariable Long id){
         postService.delete(id);
     }
+
     @GetMapping("/{id}")
-    public PostDTO getById(@PathVariable Integer id){
+    public PostDTO getById(@PathVariable Long id){
         return postService.getById(id);
     }
 }
