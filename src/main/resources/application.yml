@@ -1,6 +1,10 @@
-#spring:
-#  datasource:
-#    username: root
-#    password: Krishmari2007
-#    url: jdbc:mysql://localhost:3306/eblog?createDatabaseIfNotExist=true
+spring:
+  datasource:
+    username: root
+    password: Krishmari2007
+    url: jdbc:mysql://localhost:3306/eblog
+
+  jpa:
+    hibernate:
+      ddl-auto: update
 

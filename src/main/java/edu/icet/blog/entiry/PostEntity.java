@@ -22,7 +22,7 @@ public class PostEntity {
     private String tags;
     private String category;
     private Integer comments_count;
-    private LocalDateTime created_at;
-    private LocalDateTime updated_at;
+    private String created_at;
+    private String updated_at;
     private String image_url;
 }
